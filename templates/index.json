@@ -53,7 +53,7 @@
         "b1": {
           "type": "benefit",
           "settings": {
-            "icon": "🏠",
+            "icon": "home",
             "title": "En tu hogar",
             "text": "Sin traslados ni salas de espera. El profesional llega a ti."
           }
@@ -61,7 +61,7 @@
         "b2": {
           "type": "benefit",
           "settings": {
-            "icon": "🩺",
+            "icon": "stethoscope",
             "title": "Kinesiólogos titulados",
             "text": "Atención basada en evidencia y protocolos de seguridad."
           }
@@ -69,7 +69,7 @@
         "b3": {
           "type": "benefit",
           "settings": {
-            "icon": "📅",
+            "icon": "calendar",
             "title": "Lun a Dom · 08–18h",
             "text": "Amplia disponibilidad, incluidos fines de semana."
           }
@@ -77,7 +77,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "icon": "💳",
+            "icon": "card",
             "title": "Fonasa · Isapres",
             "text": "Atención particular y con todas las previsiones."
           }
@@ -231,7 +231,7 @@
     "quote": {
       "type": "quote",
       "custom_css": [
-        "input[type=\"checkbox\"] {width: 18px; height: 18px; margin-right: 12px; accent-color: #2B7A78; /* Cambia al color de tu marca */ flex-shrink: 0;}",
+        "input[type=\"checkbox\"] {width: 18px; height: 18px; margin-right: 12px; accent-color: #35708F; flex-shrink: 0;}",
         "label:has(input[type=\"checkbox\"]) {display: flex; align-items: center; gap: 12px; cursor: pointer;}",
         "*/label:has(input[type=\"checkbox\"]) span {line-height: 1.4;}"
       ],

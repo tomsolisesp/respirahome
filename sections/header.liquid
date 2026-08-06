@@ -4,9 +4,9 @@
       {%- if settings.logo != blank -%}
         <img src="{{ settings.logo | image_url: width: 80 }}" alt="Logo {{ shop.name }}" class="brand-logo" width="40" height="40">
       {%- else -%}
-        <img src="{{ 'logo.svg' | asset_url }}" alt="Logo {{ shop.name }}" class="brand-logo" width="40" height="40">
+        {% render 'brand-mark', size: 40, class: 'brand-logo', decorative: true %}
       {%- endif -%}
-      <span class="brand-name">{{ section.settings.brand_first }}<strong>{{ section.settings.brand_second }}</strong></span>
+      <span class="brand-name"><strong>{{ section.settings.brand_first }}</strong><span>{{ section.settings.brand_second }}</span></span>
     </a>
 
     <nav class="main-nav" aria-label="Navegación principal">
@@ -29,8 +29,8 @@
 {
   "name": "Encabezado",
   "settings": [
-    { "type": "text", "id": "brand_first", "label": "Marca (primera parte)", "default": "Respira" },
-    { "type": "text", "id": "brand_second", "label": "Marca (segunda parte, en negrita)", "default": "Home" },
+    { "type": "text", "id": "brand_first", "label": "Marca (primera parte, en negrita)", "default": "Respira" },
+    { "type": "text", "id": "brand_second", "label": "Marca (segunda parte, en regular)", "default": "Home" },
     { "type": "text", "id": "cta_label", "label": "Texto del botón", "default": "Agendar" }
   ],
   "blocks": [

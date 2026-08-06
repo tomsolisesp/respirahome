@@ -3,11 +3,11 @@
     <div class="footer-brand">
       <a href="/" class="brand">
         {%- if settings.logo != blank -%}
-          <img src="{{ settings.logo | image_url: width: 72 }}" alt="Logo {{ shop.name }}" width="36" height="36">
+          <img src="{{ settings.logo | image_url: width: 72 }}" alt="Logo {{ shop.name }}" class="brand-logo" width="36" height="36">
         {%- else -%}
-          <img src="{{ 'logo.svg' | asset_url }}" alt="Logo {{ shop.name }}" width="36" height="36">
+          {% render 'brand-mark', size: 36, class: 'brand-logo', decorative: true %}
         {%- endif -%}
-        <span class="brand-name">{{ section.settings.brand_first }}<strong>{{ section.settings.brand_second }}</strong></span>
+        <span class="brand-name"><strong>{{ section.settings.brand_first }}</strong><span>{{ section.settings.brand_second }}</span></span>
       </a>
       <p>{{ section.settings.about }}</p>
     </div>
@@ -55,8 +55,8 @@
 {
   "name": "Pie de página",
   "settings": [
-    { "type": "text", "id": "brand_first", "label": "Marca (primera parte)", "default": "Respira" },
-    { "type": "text", "id": "brand_second", "label": "Marca (segunda parte)", "default": "Home" },
+    { "type": "text", "id": "brand_first", "label": "Marca (primera parte, en negrita)", "default": "Respira" },
+    { "type": "text", "id": "brand_second", "label": "Marca (segunda parte, en regular)", "default": "Home" },
     { "type": "textarea", "id": "about", "label": "Descripción", "default": "Kinesiología a domicilio en Santiago de Chile. Cuidado respiratorio, rehabilitación y terapia manual con cercanía y evidencia." },
     { "type": "text", "id": "contact_heading", "label": "Título columna contacto", "default": "Contacto" },
     { "type": "text", "id": "location", "label": "Ubicación", "default": "Santiago, Región Metropolitana" }

@@ -81,12 +81,13 @@ Open Graph básicas (por eso ya no están en el repo). El tema además incluye:
 
 ```
 RespiraHome/
-├─ assets/            → styles.css, theme.js, logo.svg, favicon.svg
+├─ assets/            → styles.css, theme.js, logo.svg, favicon.svg, app-icon.svg
 ├─ config/            → settings_schema.json (ajustes) + settings_data.json (valores)
 ├─ layout/theme.liquid → esqueleto (head con SEO + header/footer + JS)
 ├─ locales/es.default.json → textos traducibles del sistema
 ├─ sections/          → hero, benefits, services, coverage, quote, steps, faq, cta, header, footer
-├─ snippets/          → wa-link, clp (formato $), service-icon, icon-whatsapp, seo-jsonld
+├─ snippets/          → brand-mark (isotipo), wa-link, clp (formato $),
+│                       service-icon, benefit-icon, icon-whatsapp, seo-jsonld
 └─ templates/         → index.json (home), page.liquid, 404.liquid
 ```
 
@@ -122,12 +123,48 @@ evaluación** para subir el ticket promedio.
 
 ---
 
-## 6. Branding: "RespiraHome" (junto)
+## 6. Identidad de marca
 
-Recomendado **junto**, con la segunda palabra en negrita → **Respira**Home**. Se
-lee como marca única y memorable, dominio/redes quedan limpios (`@respirahome`),
-y el contraste tipográfico une "Respira" (respiratorio/bienestar) con "Home"
-(a domicilio) sin partir la palabra.
+El sitio sigue el manual visual de RespiraHome: **azul acero + blanco**, trazo
+limpio y un único motivo gráfico.
+
+**Isotipo — casa + pulso.** Una casa de línea abierta atravesada por un
+electrocardiograma que se prolonga a ambos lados. Vive en
+[snippets/brand-mark.liquid](snippets/brand-mark.liquid), dibujado con
+`currentColor`, así que **hereda el color del contexto** (azul en el encabezado,
+blanco en el pie y dentro del recuadro del hero). Las versiones en archivo:
+
+| Archivo | Uso |
+|---|---|
+| `assets/logo.svg` | Isotipo azul sobre transparente (JSON-LD, respaldo) |
+| `assets/favicon.svg` | Ícono de app 48px (fondo azul, marca blanca) |
+| `assets/app-icon.svg` | Mismo ícono a 512px (`apple-touch-icon`) |
+
+**Wordmark.** «**Respira**Home» junto: *Respira* en Poppins 700 y *Home* en
+Poppins 400 azul medio. Se edita desde el Personalizador (Encabezado y Pie).
+
+**Paleta** (variables en [assets/styles.css](assets/styles.css), no escribas hex
+sueltos):
+
+| Token | Hex | Uso |
+|---|---|---|
+| `--brand-900` | `#1e3a4c` | Fondos oscuros: franja de beneficios, pie |
+| `--brand-700` | `#35708f` | Color principal sobre blanco (texto de acento, botones) |
+| `--brand-500` | `#4a88ab` | Azul firma del manual (isotipo, detalles) |
+| `--brand-300` | `#9cc1d6` | Texto y íconos sobre fondo oscuro |
+| `--brand-100/50` | `#e1edf4` / `#f2f7fa` | Fondos suaves de tarjetas e íconos |
+
+No hay segundo color de marca: la jerarquía se arma con la escala de azules. El
+verde solo aparece en lo de WhatsApp (marca externa) y el verde/rojo semántico en
+las etiquetas de recargo por zona.
+
+**Tipografías.** Poppins (títulos, wordmark, cifras) + Inter (texto corrido).
+
+**Íconos.** Todos de línea, mismo grosor y extremos redondeados que el isotipo:
+[snippets/service-icon.liquid](snippets/service-icon.liquid) (servicios) y
+[snippets/benefit-icon.liquid](snippets/benefit-icon.liquid) (franja de
+beneficios; si el valor no coincide con un ícono conocido imprime el texto tal
+cual, por si quedaron emojis cargados).
 
 ---
 
@@ -136,7 +173,8 @@ y el contraste tipográfico une "Respira" (respiratorio/bienestar) con "Home"
   WhatsApp con mensaje pre-cargado.
 - Confirmar **recargo fuera de horario** y afinar **recargos por zona**.
 - Completar **respuestas de FAQ**.
-- Subir un **logo/favicon propios** en Configuración del tema si se desea cambiar
-  el SVG por defecto.
+- Subir un **logo/favicon propios** en Configuración del tema solo si se quiere
+  reemplazar el isotipo SVG por un archivo distinto (el del tema ya sigue el
+  manual de marca).
 - (Opcional) Si a futuro quieren **vender packs de sesiones online**, se agregan
   como productos Shopify y una plantilla de producto.

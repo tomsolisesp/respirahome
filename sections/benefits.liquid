@@ -2,7 +2,7 @@
   <div class="container strip-grid">
     {%- for block in section.blocks -%}
       <div class="strip-item" {{ block.shopify_attributes }}>
-        <span class="strip-ico">{{ block.settings.icon }}</span>
+        <span class="strip-ico">{% render 'benefit-icon', icon: block.settings.icon %}</span>
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.text }}</p>
       </div>
@@ -18,7 +18,20 @@
       "type": "benefit",
       "name": "Beneficio",
       "settings": [
-        { "type": "text", "id": "icon", "label": "Emoji / ícono", "default": "🏠" },
+        {
+          "type": "select", "id": "icon", "label": "Ícono", "default": "home",
+          "info": "Íconos de línea de la marca (casa + pulso).",
+          "options": [
+            { "value": "home", "label": "Casa (a domicilio)" },
+            { "value": "stethoscope", "label": "Fonendoscopio (profesionales)" },
+            { "value": "calendar", "label": "Calendario (disponibilidad)" },
+            { "value": "card", "label": "Tarjeta (previsión y pago)" },
+            { "value": "shield", "label": "Escudo (seguridad)" },
+            { "value": "clock", "label": "Reloj (horario)" },
+            { "value": "pulse", "label": "Pulso (salud)" },
+            { "value": "user", "label": "Persona (atención personalizada)" }
+          ]
+        },
         { "type": "text", "id": "title", "label": "Título", "default": "En tu hogar" },
         { "type": "textarea", "id": "text", "label": "Texto", "default": "Sin traslados ni salas de espera. El profesional llega a ti." }
       ]

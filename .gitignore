@@ -10,3 +10,6 @@
 
 # Logs / temporales
 *.log
+
+# Vista previa local (no es parte del tema; Shopify no acepta HTML en la raíz)
+preview.html

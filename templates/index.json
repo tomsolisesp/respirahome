@@ -226,7 +226,7 @@
         "eyebrow": "Cotizador",
         "title": "Calcula el valor de tu sesión",
         "subtitle": "Una estimación referencial. El valor definitivo se confirma al agendar.",
-        "default_comuna": "Las Condes",
+        "default_comuna": "Providencia",
         "cta_label": "Agendar esta sesión",
         "note": "Valor referencial. No constituye cobro. Sujeto a confirmación."
       }

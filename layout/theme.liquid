@@ -15,17 +15,57 @@
     <link rel="apple-touch-icon" href="{{ 'app-icon.svg' | asset_url }}">
   {%- endif -%}
 
-  {%- comment -%} Título y descripción SEO {%- endcomment -%}
+  {%- comment -%}
+    Título SEO. En la home, si en el admin no se cargó un «Homepage title»
+    propio, page_title trae solo el nombre de la tienda y queda un título
+    inútil para buscar: se completa con el servicio y la ciudad.
+  {%- endcomment -%}
   <title>
-    {{ page_title }}
-    {%- if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif -%}
-    {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
-    {%- unless page_title contains shop.name %} &middot; {{ shop.name }}{% endunless -%}
+    {%- if request.page_type == 'index' and page_title == shop.name -%}
+      {{ shop.name }} · Kinesiología a domicilio en Santiago
+    {%- else -%}
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ 'general.meta.tags' | t: tags: current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &middot; {{ shop.name }}{% endunless -%}
+    {%- endif -%}
   </title>
 
-  {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
+  {%- comment -%}
+    Descripción: la del admin de Shopify si está cargada; si no, un texto por
+    defecto para que la home nunca salga sin descripción en Google.
+  {%- endcomment -%}
+  {%- assign default_description = 'Kinesiología a domicilio en Santiago: terapia respiratoria para adulto mayor y pediátrica, rehabilitación y terapia manual. Agenda por WhatsApp y te atendemos en tu casa.' -%}
+  {%- if page_description != blank -%}
+    {%- assign meta_description = page_description -%}
+  {%- elsif request.page_type == 'index' -%}
+    {%- assign meta_description = default_description -%}
+  {%- else -%}
+    {%- assign meta_description = shop.description | default: default_description -%}
   {%- endif -%}
+  <meta name="description" content="{{ meta_description | strip_html | escape }}">
+
+  {%- comment -%}
+    Open Graph y Twitter: sin esto el enlace se comparte por WhatsApp sin
+    imagen ni texto, que es justo por donde se difunde este sitio.
+  {%- endcomment -%}
+  {%- capture og_title -%}
+    {%- if request.page_type == 'index' -%}{{ shop.name }} · Kinesiología a domicilio en Santiago{%- else -%}{{ page_title }}{%- endif -%}
+  {%- endcapture -%}
+  <meta property="og:site_name" content="{{ shop.name | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:title" content="{{ og_title | strip | escape }}">
+  <meta property="og:description" content="{{ meta_description | strip_html | escape }}">
+  <meta property="og:image" content="{{ 'social-share.png' | asset_url | prepend: 'https:' | split: '?' | first }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ shop.name | escape }} — kinesiología a domicilio en Santiago">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title | strip | escape }}">
+  <meta name="twitter:description" content="{{ meta_description | strip_html | escape }}">
+  <meta name="twitter:image" content="{{ 'social-share.png' | asset_url | prepend: 'https:' | split: '?' | first }}">
 
   {%- comment -%} Fuentes {%- endcomment -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">

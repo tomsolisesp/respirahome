@@ -45,6 +45,20 @@
 
   <div class="container footer-bottom">
     <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}. Todos los derechos reservados.</p>
+
+    {%- comment -%}
+      Legales: solo se enlaza la política que exista de verdad en el admin
+      (Configuración → Políticas). Así nunca queda un enlace a un 404.
+    {%- endcomment -%}
+    <nav class="footer-legal" aria-label="Información legal">
+      {%- if shop.privacy_policy != blank -%}
+        <a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title }}</a>
+      {%- endif -%}
+      {%- if shop.terms_of_service != blank -%}
+        <a href="{{ shop.terms_of_service.url }}">{{ shop.terms_of_service.title }}</a>
+      {%- endif -%}
+    </nav>
+
     <div class="social social-sm">
       {%- if settings.instagram_url != blank -%}<a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{%- endif -%}
       {%- if settings.facebook_url != blank -%}<a href="{{ settings.facebook_url }}" target="_blank" rel="noopener">Facebook</a>{%- endif -%}

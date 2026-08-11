@@ -286,7 +286,7 @@
           "type": "faq",
           "settings": {
             "question": "¿A qué comunas de Santiago llegan?",
-            "answer": ""
+            "answer": "<p>Cubrimos buena parte de la Región Metropolitana. Puedes ver el listado completo en la sección <a href=\"#cobertura\">Cobertura</a>: en muchas comunas vamos sin costo de traslado y en el resto se suma un recargo fijo. Si no encuentras la tuya, escríbenos igual y lo revisamos contigo.</p>"
           }
         },
         "f4": {

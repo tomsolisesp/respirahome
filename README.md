@@ -33,7 +33,8 @@ temas** (Online Store → Themes → Customize) y desde la **Configuración del 
 | URLs de Instagram y Facebook | ⚠️ falta |
 | Email de contacto | ⚠️ falta |
 | Recargo fuera de horario (hoy `$8.000`) | 🟡 confirmar |
-| Recargos por zona (`$0 / $5.000 / $10.000`) | 🟡 ajustar |
+| Recargos por zona (`$0 / $4.990`) | ✅ confirmado 11-08-2026 |
+| Precio de la respiratoria **pediátrica** (hoy `$28.000`) | 🟡 confirmar |
 | Respuestas de FAQ vacías | 🟡 completar |
 
 ---
@@ -81,12 +82,13 @@ Open Graph básicas (por eso ya no están en el repo). El tema además incluye:
 
 ```
 RespiraHome/
-├─ assets/            → styles.css, theme.js, logo.svg, favicon.svg
+├─ assets/            → styles.css, theme.js, logo.svg, favicon.svg, app-icon.svg
 ├─ config/            → settings_schema.json (ajustes) + settings_data.json (valores)
 ├─ layout/theme.liquid → esqueleto (head con SEO + header/footer + JS)
 ├─ locales/es.default.json → textos traducibles del sistema
 ├─ sections/          → hero, benefits, services, coverage, quote, steps, faq, cta, header, footer
-├─ snippets/          → wa-link, clp (formato $), service-icon, icon-whatsapp, seo-jsonld
+├─ snippets/          → brand-mark (isotipo), wa-link, clp (formato $),
+│                       service-icon, benefit-icon, icon-whatsapp, seo-jsonld
 └─ templates/         → index.json (home), page.liquid, 404.liquid
 ```
 
@@ -97,37 +99,81 @@ recargo fuera de horario viene de la config global (`#data-config`).
 
 ---
 
-## 5. Análisis de mercado y recomendación de precios
+## 5. Precios vigentes y referencia de mercado
 
-> Rango de referencia del mercado de **kinesiología a domicilio en Santiago (RM)**.
-> Revísalo cada temporada porque los precios se ajustan seguido.
+> Valores confirmados por Jonathan el **11 de agosto de 2026** (revisión por
+> WhatsApp). El rango de mercado queda como referencia: revísalo cada temporada
+> porque los precios se ajustan seguido.
 
-| Servicio | Rango de mercado (CLP/sesión) | **Sugerido RespiraHome** |
-|---|---|---|
-| Respiratoria **adulto mayor** | $22.000 – $38.000 | **$28.000** |
-| Respiratoria **pediátrica** | $22.000 – $38.000 | **$28.000** |
-| **Rehabilitación musculoesquelética** | $20.000 – $40.000 | **$27.000** |
-| **Rehabilitación cardiopulmonar** | $28.000 – $45.000 | **$32.000** |
-| **Terapia manual ortopédica** | $25.000 – $42.000 | **$30.000** |
+| Servicio | **Precio en el sitio** | Duración | Rango de mercado (CLP/sesión) |
+|---|---|---|---|
+| Respiratoria **adulto mayor** | **$24.990** | — | $22.000 – $38.000 |
+| Respiratoria **pediátrica** | **$28.000** ⚠️ sin confirmar | — | $22.000 – $38.000 |
+| **Rehabilitación musculoesquelética** | **$24.990** | 45 min | $20.000 – $40.000 |
+| **Rehabilitación cardiopulmonar** | **$34.990** | — | $28.000 – $45.000 |
+| **Terapia manual ortopédica** | **$29.990** | — | $25.000 – $42.000 |
 
 - **Adicionales (respiratoria adulto mayor):** aspiración +$6.000, nebulización +$4.000.
-- **Recargo por distancia desde Ñuñoa:** Zona 1 $0 · Zona 2 +$5.000 · Zona 3 +$10.000.
+- **Recargo por distancia desde Ñuñoa:** Zona 1 $0 · Zona 2 +$4.990. Las dos zonas
+  con recargo se fusionaron en una sola cuando ambas quedaron en el mismo valor.
+- **Sin recargo, por instrucción expresa:** La Florida, Maipú, Quilicura y
+  Cerrillos, además de Ñuñoa y las comunas colindantes.
 - **Recargo fuera de horario:** por definir (placeholder $8.000; sugerido $6.000–$10.000 o +25–30%).
 
-**Racional:** respeta el piso de $25.000 y posiciona a RespiraHome en calidad
-media-alta sin competir por precio bajo. Cardiopulmonar más caro por tiempo y
-monitoreo. Respiratoria adulto mayor y pediátrica al mismo valor (misma
-complejidad). A futuro conviene evaluar **packs de sesiones** y **valor de primera
-evaluación** para subir el ticket promedio.
+**Pendiente:** la **pediátrica** no se mencionó en la revisión y quedó en $28.000.
+Como la respiratoria de adulto mayor bajó a $24.990, hay que confirmar si ambas
+siguen al mismo valor (era el criterio original: misma complejidad) o si la
+diferencia es intencional.
+
+**Racional de fondo:** posicionar a RespiraHome en calidad media-alta sin competir
+por precio bajo. Cardiopulmonar más caro por tiempo y monitoreo. A futuro conviene
+evaluar **packs de sesiones** y **valor de primera evaluación** para subir el
+ticket promedio.
 
 ---
 
-## 6. Branding: "RespiraHome" (junto)
+## 6. Identidad de marca
 
-Recomendado **junto**, con la segunda palabra en negrita → **Respira**Home**. Se
-lee como marca única y memorable, dominio/redes quedan limpios (`@respirahome`),
-y el contraste tipográfico une "Respira" (respiratorio/bienestar) con "Home"
-(a domicilio) sin partir la palabra.
+El sitio sigue el manual visual de RespiraHome: **azul acero + blanco**, trazo
+limpio y un único motivo gráfico.
+
+**Isotipo — casa + pulso.** Una casa de línea abierta atravesada por un
+electrocardiograma que se prolonga a ambos lados. Vive en
+[snippets/brand-mark.liquid](snippets/brand-mark.liquid), dibujado con
+`currentColor`, así que **hereda el color del contexto** (azul en el encabezado,
+blanco en el pie y dentro del recuadro del hero). Las versiones en archivo:
+
+| Archivo | Uso |
+|---|---|
+| `assets/logo.svg` | Isotipo azul sobre transparente (JSON-LD, respaldo) |
+| `assets/favicon.svg` | Ícono de app 48px (fondo azul, marca blanca) |
+| `assets/app-icon.svg` | Mismo ícono a 512px (`apple-touch-icon`) |
+
+**Wordmark.** «**Respira**Home» junto: *Respira* en Poppins 700 y *Home* en
+Poppins 400 azul medio. Se edita desde el Personalizador (Encabezado y Pie).
+
+**Paleta** (variables en [assets/styles.css](assets/styles.css), no escribas hex
+sueltos):
+
+| Token | Hex | Uso |
+|---|---|---|
+| `--brand-900` | `#1e3a4c` | Fondos oscuros: franja de beneficios, pie |
+| `--brand-700` | `#35708f` | Color principal sobre blanco (texto de acento, botones) |
+| `--brand-500` | `#4a88ab` | Azul firma del manual (isotipo, detalles) |
+| `--brand-300` | `#9cc1d6` | Texto y íconos sobre fondo oscuro |
+| `--brand-100/50` | `#e1edf4` / `#f2f7fa` | Fondos suaves de tarjetas e íconos |
+
+No hay segundo color de marca: la jerarquía se arma con la escala de azules. El
+verde solo aparece en lo de WhatsApp (marca externa) y el verde/rojo semántico en
+las etiquetas de recargo por zona.
+
+**Tipografías.** Poppins (títulos, wordmark, cifras) + Inter (texto corrido).
+
+**Íconos.** Todos de línea, mismo grosor y extremos redondeados que el isotipo:
+[snippets/service-icon.liquid](snippets/service-icon.liquid) (servicios) y
+[snippets/benefit-icon.liquid](snippets/benefit-icon.liquid) (franja de
+beneficios; si el valor no coincide con un ícono conocido imprime el texto tal
+cual, por si quedaron emojis cargados).
 
 ---
 
@@ -136,7 +182,8 @@ y el contraste tipográfico une "Respira" (respiratorio/bienestar) con "Home"
   WhatsApp con mensaje pre-cargado.
 - Confirmar **recargo fuera de horario** y afinar **recargos por zona**.
 - Completar **respuestas de FAQ**.
-- Subir un **logo/favicon propios** en Configuración del tema si se desea cambiar
-  el SVG por defecto.
+- Subir un **logo/favicon propios** en Configuración del tema solo si se quiere
+  reemplazar el isotipo SVG por un archivo distinto (el del tema ya sigue el
+  manual de marca).
 - (Opcional) Si a futuro quieren **vender packs de sesiones online**, se agregan
   como productos Shopify y una plantilla de producto.

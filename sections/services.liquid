@@ -13,7 +13,10 @@
           <div class="service-ico">{% render 'service-icon', icon: block.settings.icon %}</div>
           <h3>{{ block.settings.name }}</h3>
           <p>{{ block.settings.description }}</p>
-          <div class="service-price"><span class="amount">{% render 'clp', amount: block.settings.price %}</span><span class="per">/ sesión</span></div>
+          <div class="service-price">
+            <span class="amount">{% render 'clp', amount: block.settings.price %}</span><span class="per">/ sesión</span>
+            {%- if block.settings.duration != blank -%}<span class="service-duration">{{ block.settings.duration }}</span>{%- endif -%}
+          </div>
 
           {%- if block.settings.adic_1_name != blank or block.settings.adic_2_name != blank -%}
             <div class="service-adicionales">
@@ -68,14 +71,16 @@
         { "type": "text", "id": "name", "label": "Nombre", "default": "Kinesiología respiratoria" },
         { "type": "textarea", "id": "description", "label": "Descripción" },
         { "type": "number", "id": "price", "label": "Precio base (CLP)", "default": 28000 },
+        { "type": "text", "id": "duration", "label": "Duración de la sesión", "info": "Se muestra junto al precio. Ej: 45 min. Déjalo vacío para ocultarlo." },
         {
           "type": "select", "id": "icon", "label": "Ícono", "default": "lungs",
           "options": [
             { "value": "lungs", "label": "Pulmones (respiratorio)" },
             { "value": "baby", "label": "Bebé (pediátrico)" },
-            { "value": "muscle", "label": "Músculo" },
+            { "value": "muscle", "label": "Pesa (rehabilitación)" },
             { "value": "heart", "label": "Corazón (cardiopulmonar)" },
-            { "value": "hand", "label": "Mano (terapia manual)" }
+            { "value": "hand", "label": "Mano (terapia manual)" },
+            { "value": "house", "label": "Casa con pulso (a domicilio)" }
           ]
         },
         { "type": "checkbox", "id": "featured", "label": "Destacar (más solicitado)", "default": false },

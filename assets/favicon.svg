@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="RespiraHome">
   <defs>
-    <linearGradient id="f" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#17a2b0"/>
-      <stop offset="1" stop-color="#0f7c8a"/>
+    <linearGradient id="rh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a88ab"/>
+      <stop offset="1" stop-color="#2f6482"/>
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#f)"/>
-  <path d="M24 14c.6 0 1 .4 1 1v4.4c.6-.5 1.4-.8 2.1-.7 1.7.2 2.7 1.8 2.9 3.5.2 1.1.1 2.3-.2 3.3-.6 1.7-2.1 2.8-3.7 2.8-1.7 0-2.9-1.3-2.9-3v-3.1a.5.5 0 00-1 0v3.1c0 1.7-1.2 3-2.9 3-1.6 0-3.1-1.1-3.7-2.8-.3-1-.4-2.2-.2-3.3.2-1.7 1.2-3.3 2.9-3.5.7-.1 1.5.2 2.1.7V15c0-.6.4-1 1-1z" fill="#fff"/>
+  <rect x="0" y="0" width="48" height="48" rx="11" fill="url(#rh)"/>
+  <g transform="translate(24 25) scale(.72) translate(-24 -25)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 32V23.6L24 9l16 14.6V32"/>
+    <path d="M3 32h10.5l2-3.2 2 3.2 3-15 3 22 2.5-13.5 2 8 1.5-3 1.5 1.5H45"/>
+  </g>
 </svg>

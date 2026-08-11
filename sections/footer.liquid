@@ -35,6 +35,7 @@
       <h4>{{ section.settings.contact_heading }}</h4>
       <ul>
         <li><a href="{% render 'wa-link' %}" target="_blank" rel="noopener">WhatsApp</a></li>
+        {%- if settings.phone_display != blank -%}<li><a href="tel:+{{ settings.whatsapp_number }}">{{ settings.phone_display }}</a></li>{%- endif -%}
         {%- if settings.email != blank -%}<li><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>{%- endif -%}
         <li>{{ settings.hours_text }} · {{ settings.hours_open }}–{{ settings.hours_close }}</li>
         {%- if section.settings.location != blank -%}<li>{{ section.settings.location }}</li>{%- endif -%}

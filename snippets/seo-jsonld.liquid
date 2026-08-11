@@ -9,6 +9,9 @@
   "url": "{{ shop.url }}",
   "logo": "{{ 'logo.svg' | asset_url | prepend: 'https:' }}",
   "medicalSpecialty": "Physiotherapy",
+  {%- if settings.whatsapp_number != blank -%}
+  "telephone": "+{{ settings.whatsapp_number }}",
+  {%- endif -%}
   "priceRange": "$$",
   "currenciesAccepted": "CLP",
   "paymentAccepted": "Efectivo, Transferencia, Fonasa, Isapre",

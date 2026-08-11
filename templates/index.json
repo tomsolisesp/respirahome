@@ -221,7 +221,6 @@
     },
     "quote": {
       "type": "quote",
-      "disabled": true,
       "settings": {
         "anchor": "cotizador",
         "eyebrow": "Cotizador",

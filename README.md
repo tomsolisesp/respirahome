@@ -33,7 +33,8 @@ temas** (Online Store → Themes → Customize) y desde la **Configuración del 
 | URLs de Instagram y Facebook | ⚠️ falta |
 | Email de contacto | ⚠️ falta |
 | Recargo fuera de horario (hoy `$8.000`) | 🟡 confirmar |
-| Recargos por zona (`$0 / $5.000 / $10.000`) | 🟡 ajustar |
+| Recargos por zona (`$0 / $4.990`) | ✅ confirmado 11-08-2026 |
+| Precio de la respiratoria **pediátrica** (hoy `$28.000`) | 🟡 confirmar |
 | Respuestas de FAQ vacías | 🟡 completar |
 
 ---
@@ -98,28 +99,36 @@ recargo fuera de horario viene de la config global (`#data-config`).
 
 ---
 
-## 5. Análisis de mercado y recomendación de precios
+## 5. Precios vigentes y referencia de mercado
 
-> Rango de referencia del mercado de **kinesiología a domicilio en Santiago (RM)**.
-> Revísalo cada temporada porque los precios se ajustan seguido.
+> Valores confirmados por Jonathan el **11 de agosto de 2026** (revisión por
+> WhatsApp). El rango de mercado queda como referencia: revísalo cada temporada
+> porque los precios se ajustan seguido.
 
-| Servicio | Rango de mercado (CLP/sesión) | **Sugerido RespiraHome** |
-|---|---|---|
-| Respiratoria **adulto mayor** | $22.000 – $38.000 | **$28.000** |
-| Respiratoria **pediátrica** | $22.000 – $38.000 | **$28.000** |
-| **Rehabilitación musculoesquelética** | $20.000 – $40.000 | **$27.000** |
-| **Rehabilitación cardiopulmonar** | $28.000 – $45.000 | **$32.000** |
-| **Terapia manual ortopédica** | $25.000 – $42.000 | **$30.000** |
+| Servicio | **Precio en el sitio** | Duración | Rango de mercado (CLP/sesión) |
+|---|---|---|---|
+| Respiratoria **adulto mayor** | **$24.990** | — | $22.000 – $38.000 |
+| Respiratoria **pediátrica** | **$28.000** ⚠️ sin confirmar | — | $22.000 – $38.000 |
+| **Rehabilitación musculoesquelética** | **$24.990** | 45 min | $20.000 – $40.000 |
+| **Rehabilitación cardiopulmonar** | **$34.990** | — | $28.000 – $45.000 |
+| **Terapia manual ortopédica** | **$29.990** | — | $25.000 – $42.000 |
 
 - **Adicionales (respiratoria adulto mayor):** aspiración +$6.000, nebulización +$4.000.
-- **Recargo por distancia desde Ñuñoa:** Zona 1 $0 · Zona 2 +$5.000 · Zona 3 +$10.000.
+- **Recargo por distancia desde Ñuñoa:** Zona 1 $0 · Zona 2 +$4.990. Las dos zonas
+  con recargo se fusionaron en una sola cuando ambas quedaron en el mismo valor.
+- **Sin recargo, por instrucción expresa:** La Florida, Maipú, Quilicura y
+  Cerrillos, además de Ñuñoa y las comunas colindantes.
 - **Recargo fuera de horario:** por definir (placeholder $8.000; sugerido $6.000–$10.000 o +25–30%).
 
-**Racional:** respeta el piso de $25.000 y posiciona a RespiraHome en calidad
-media-alta sin competir por precio bajo. Cardiopulmonar más caro por tiempo y
-monitoreo. Respiratoria adulto mayor y pediátrica al mismo valor (misma
-complejidad). A futuro conviene evaluar **packs de sesiones** y **valor de primera
-evaluación** para subir el ticket promedio.
+**Pendiente:** la **pediátrica** no se mencionó en la revisión y quedó en $28.000.
+Como la respiratoria de adulto mayor bajó a $24.990, hay que confirmar si ambas
+siguen al mismo valor (era el criterio original: misma complejidad) o si la
+diferencia es intencional.
+
+**Racional de fondo:** posicionar a RespiraHome en calidad media-alta sin competir
+por precio bajo. Cardiopulmonar más caro por tiempo y monitoreo. A futuro conviene
+evaluar **packs de sesiones** y **valor de primera evaluación** para subir el
+ticket promedio.
 
 ---
 

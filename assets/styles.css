@@ -238,16 +238,23 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.18; font-weigh
 }
 .service-card h3 { font-size: 1.22rem; color: var(--brand-900); }
 .service-card p { color: var(--slate); margin-top: 10px; font-size: .95rem; flex: 1; }
-.service-price { margin-top: 20px; display: flex; align-items: baseline; gap: 6px; }
+.service-price { margin-top: 20px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; }
 .service-price .amount { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--brand-800); letter-spacing: -.03em; }
 .service-price .per { color: var(--muted); font-size: .9rem; }
+.service-duration {
+  margin-left: auto; align-self: center; white-space: nowrap;
+  font-size: .8rem; font-weight: 600; color: var(--brand-700);
+  background: var(--brand-50); border: 1px solid var(--brand-100);
+  padding: 3px 11px; border-radius: 999px;
+}
 .service-adicionales { margin-top: 16px; border-top: 1px dashed var(--line); padding-top: 14px; }
 .service-adicionales .title { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
 .service-adicionales li { display: flex; justify-content: space-between; font-size: .92rem; color: var(--slate); margin-top: 8px; }
 .service-adicionales li b { color: var(--brand-700); }
 
 /* ---- Zonas / cobertura ------------------------------------------------- */
-.zones-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+/* auto-fit: se adapta a la cantidad de zonas cargadas (hoy 2, antes 3). */
+.zones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
 .zone-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); }
 .zone-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
 .zone-card h3 { font-size: 1.1rem; color: var(--brand-900); }
@@ -261,7 +268,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.18; font-weigh
 /* ---- Cotizador --------------------------------------------------------- */
 .quote { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: start; }
 .quote-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-sm); display: grid; gap: 20px; }
-.field label { display: block; font-weight: 600; color: var(--brand-900); margin-bottom: 8px; font-size: .95rem; }
+/* Solo la etiqueta propia del campo: si no se acota con >, gana por
+   especificidad sobre .check y aplasta la fila de los adicionales. */
+.field > label { display: block; font-weight: 600; color: var(--brand-900); margin-bottom: 8px; font-size: .95rem; }
 .field select {
   width: 100%; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: var(--radius-sm);
   font-family: var(--font-body); font-size: 1rem; color: var(--ink); background: #fff; cursor: pointer;

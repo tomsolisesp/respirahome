@@ -99,7 +99,7 @@
           "settings": {
             "name": "Kinesiología respiratoria — Adulto mayor",
             "description": "Evaluación y tratamiento respiratorio domiciliario para el adulto mayor: higiene bronquial, técnicas de reeducación respiratoria y manejo de secreciones.",
-            "price": 28000,
+            "price": 24990,
             "icon": "lungs",
             "featured": true,
             "badge": "Más solicitado",
@@ -129,7 +129,8 @@
           "settings": {
             "name": "Rehabilitación musculoesquelética",
             "description": "Recuperación funcional de lesiones, post operatorios, dolor de espalda, rodilla y hombro mediante ejercicio terapéutico dirigido.",
-            "price": 27000,
+            "price": 24990,
+            "duration": "45 min",
             "icon": "muscle",
             "featured": false,
             "badge": "Más solicitado",
@@ -144,7 +145,7 @@
           "settings": {
             "name": "Rehabilitación cardiopulmonar",
             "description": "Programa de reacondicionamiento para pacientes cardíacos y respiratorios crónicos, con monitoreo y progresión segura del esfuerzo.",
-            "price": 32000,
+            "price": 34990,
             "icon": "heart",
             "featured": false,
             "badge": "Más solicitado",
@@ -158,8 +159,8 @@
           "type": "service",
           "settings": {
             "name": "Terapia manual ortopédica",
-            "description": "Técnicas manuales especializadas para aliviar el dolor, mejorar la movilidad articular y tratar disfunciones musculoesqueléticas.",
-            "price": 30000,
+            "description": "Tratamiento del dolor crónico: técnicas manuales especializadas para aliviar la molestia que persiste en el tiempo, recuperar la movilidad articular y corregir las disfunciones musculoesqueléticas que la mantienen.",
+            "price": 29990,
             "icon": "hand",
             "featured": false,
             "badge": "Más solicitado",
@@ -193,48 +194,33 @@
           "settings": {
             "name": "Zona 1",
             "surcharge": 0,
-            "description": "Ñuñoa y comunas colindantes.",
-            "comunas": "Ñuñoa\nProvidencia\nSantiago Centro\nMacul\nPeñalolén\nLa Reina\nSan Joaquín"
+            "description": "Ñuñoa, comunas colindantes y las demás que atendemos sin costo de traslado.",
+            "comunas": "Ñuñoa\nProvidencia\nSantiago Centro\nMacul\nPeñalolén\nLa Reina\nSan Joaquín\nLa Florida\nMaipú\nQuilicura\nCerrillos"
           }
         },
         "z2": {
           "type": "zone",
           "settings": {
             "name": "Zona 2",
-            "surcharge": 5000,
-            "description": "Comunas de distancia media.",
-            "comunas": "Las Condes\nVitacura\nLa Florida\nIndependencia\nRecoleta\nSan Miguel\nLa Cisterna\nEstación Central\nQuinta Normal\nPedro Aguirre Cerda\nLa Granja"
-          }
-        },
-        "z3": {
-          "type": "zone",
-          "settings": {
-            "name": "Zona 3",
-            "surcharge": 10000,
-            "description": "Comunas más alejadas del sector oriente/centro.",
-            "comunas": "Puente Alto\nMaipú\nQuilicura\nPudahuel\nHuechuraba\nLa Pintana\nEl Bosque\nCerrillos\nRenca\nConchalí\nLo Barnechea\nSan Bernardo\nLo Espejo\nCerro Navia\nSan Ramón"
+            "surcharge": 4990,
+            "description": "Resto de la Región Metropolitana.",
+            "comunas": "Las Condes\nVitacura\nIndependencia\nRecoleta\nSan Miguel\nLa Cisterna\nEstación Central\nQuinta Normal\nPedro Aguirre Cerda\nLa Granja\nPuente Alto\nPudahuel\nHuechuraba\nLa Pintana\nEl Bosque\nRenca\nConchalí\nLo Barnechea\nSan Bernardo\nLo Espejo\nCerro Navia\nSan Ramón"
           }
         }
       },
       "block_order": [
         "z1",
-        "z2",
-        "z3"
+        "z2"
       ],
       "settings": {
         "anchor": "cobertura",
         "eyebrow": "Cobertura",
         "title": "Llegamos a tu comuna en Santiago",
-        "subtitle": "Operamos desde Ñuñoa. El valor final considera un recargo por distancia según la zona de tu comuna."
+        "subtitle": "Operamos desde Ñuñoa. En buena parte de Santiago vamos sin costo de traslado; en el resto se suma un recargo fijo."
       }
     },
     "quote": {
       "type": "quote",
-      "custom_css": [
-        "input[type=\"checkbox\"] {width: 18px; height: 18px; margin-right: 12px; accent-color: #35708F; flex-shrink: 0;}",
-        "label:has(input[type=\"checkbox\"]) {display: flex; align-items: center; gap: 12px; cursor: pointer;}",
-        "*/label:has(input[type=\"checkbox\"]) span {line-height: 1.4;}"
-      ],
       "settings": {
         "anchor": "cotizador",
         "eyebrow": "Cotizador",

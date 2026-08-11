@@ -11,5 +11,10 @@
 # Logs / temporales
 *.log
 
-# Vista previa local (no es parte del tema; Shopify no acepta HTML en la raíz)
+# Vista previa local (no es parte del tema; Shopify solo acepta sus carpetas)
 preview.html
+tools/
+
+# Capturas de pantalla que se dejan en la carpeta para revisar cambios
+Captura de pantalla*.png
+*.screenshot.png

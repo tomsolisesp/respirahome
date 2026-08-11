@@ -18,7 +18,7 @@
         </div>
         <div class="field">
           <label for="q-comuna">Comuna</label>
-          <select id="q-comuna"></select>
+          <select id="q-comuna" data-default="{{ section.settings.default_comuna | escape }}"></select>
         </div>
         <div class="field">
           <label for="q-horario">Horario</label>
@@ -50,6 +50,11 @@
     { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "Cotizador" },
     { "type": "text", "id": "title", "label": "Título", "default": "Calcula el valor de tu sesión" },
     { "type": "textarea", "id": "subtitle", "label": "Subtítulo", "default": "Una estimación referencial. El valor definitivo se confirma al agendar." },
+    {
+      "type": "text", "id": "default_comuna", "label": "Comuna preseleccionada",
+      "info": "Debe escribirse igual que en la sección Cobertura. Si no coincide con ninguna, se muestra la primera de la lista.",
+      "default": "Las Condes"
+    },
     { "type": "text", "id": "cta_label", "label": "Texto del botón", "default": "Agendar esta sesión" },
     { "type": "text", "id": "note", "label": "Nota", "default": "Valor referencial. No constituye cobro. Sujeto a confirmación." }
   ],

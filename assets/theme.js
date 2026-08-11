@@ -89,6 +89,13 @@
       return '<option value="' + c + '">' + label + "</option>";
     }).join("");
 
+    // Comuna preseleccionada (se configura en la sección Cotizador).
+    // Si no calza con ninguna de la lista, queda la primera.
+    var comunaPorDefecto = selComuna.getAttribute("data-default");
+    if (comunaPorDefecto && comunas.indexOf(comunaPorDefecto) !== -1) {
+      selComuna.value = comunaPorDefecto;
+    }
+
     // Etiqueta horario fuera
     var recargoFuera = Number(CFG.recargoFueraHorario || 0);
     var optFuera = selHorario && selHorario.querySelector('option[value="fuera"]');

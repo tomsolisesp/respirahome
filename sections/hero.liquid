@@ -1,8 +1,14 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-copy">
-      {%- if section.settings.eyebrow != blank -%}<span class="eyebrow">{{ section.settings.eyebrow }}</span>{%- endif -%}
-      <h1>{{ section.settings.title }} <span class="hl">{{ section.settings.title_highlight }}</span></h1>
+     {%- if section.settings.eyebrow != blank -%}
+  <h1 class="eyebrow">{{ section.settings.eyebrow }}</h1>
+{%- endif -%}
+
+<div class="hero-title">
+  {{ section.settings.title }}
+  <span class="hl">{{ section.settings.title_highlight }}</span>
+</div>
       {%- if section.settings.lead != blank -%}<p class="lead">{{ section.settings.lead }}</p>{%- endif -%}
 
       <div class="hero-cta">
